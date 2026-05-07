@@ -11,4 +11,5 @@ def bot_loop():
         time.sleep(60)
 threading.Thread(target=bot_loop).start()
 if name == "main":
-    app.run(host="0.0.0.0", port=10000)
+import os
+app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 10000)))
